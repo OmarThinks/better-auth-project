@@ -1,13 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 import {
-  Session,
-  type UserSession,
   AllowAnonymous,
   OptionalAuth,
+  Session,
+  type UserSession,
 } from '@thallesp/nestjs-better-auth';
 
 @Controller('users')
-export class UserController {
+class UserController {
   @Get('me')
   getProfile(@Session() session: UserSession) {
     return { user: session.user };
@@ -25,3 +25,5 @@ export class UserController {
     return { authenticated: !!session };
   }
 }
+
+export { UserController };

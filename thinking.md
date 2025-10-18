@@ -1,5 +1,4 @@
-- ANything else before linking the db?
-- Link the controller.
+- Anything else before linking the db?
 
 ## Link the DB:
 
