@@ -4,12 +4,20 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { auth } from './user/auth';
 import { UserController } from './user/user.controller';
+import { ConfigModule } from '@nestjs/config';
 
-console.log('TestEnvVar: ', console.log(process.env.TEST));
+console.log('TestEnvVar: ', process.env.TEST);
 
 @Module({
-  imports: [AuthModule.forRoot({ auth })],
-  controllers: [AppController, UserController],
+  imports: [
+    //AuthModule.forRoot({ auth }), // TODO
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+    }),
+  ],
+  controllers: [
+    AppController, //UserController // TODO
+  ],
   providers: [AppService],
 })
 class AppModule {}
