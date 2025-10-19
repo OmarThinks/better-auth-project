@@ -10,14 +10,12 @@ console.log('TestEnvVar: ', process.env.TEST);
 
 @Module({
   imports: [
-    //AuthModule.forRoot({ auth }), // TODO
+    AuthModule.forRoot({ auth }),
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
   ],
-  controllers: [
-    AppController, //UserController // TODO
-  ],
+  controllers: [AppController, UserController],
   providers: [AppService],
 })
 class AppModule {}

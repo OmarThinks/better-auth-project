@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  //@OptionalAuth() // TODO
+  @OptionalAuth()
   getHello(): string {
     return this.appService.getHello();
   }
