@@ -1,8 +1,11 @@
 import { betterAuth } from 'better-auth';
 import { anonymous } from 'better-auth/plugins';
+import { constants } from 'utils/constants';
+import Database from 'better-sqlite3';
 
 const auth = betterAuth({
-  secret: 'OG3zZZ84QiLNPVRAVIpoKtY3XabbeNmi',
+  database: new Database(constants.DATABASE_URL),
+  secret: constants.BETTER_AUTH_SECRET,
   emailAndPassword: {
     enabled: true,
   },
