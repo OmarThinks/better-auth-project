@@ -1,9 +1,12 @@
 import { betterAuth } from 'better-auth';
+import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { anonymous } from 'better-auth/plugins';
-import Database from 'better-sqlite3';
+import { PrismaClient } from '../generated/prisma';
 
 const auth = betterAuth({
-  database: new Database(process.env.DATABASE_URL),
+  database: prismaAdapter(PrismaClient, {
+    provider: 'sqlite', // or "mysql", "postgresql", ...etc
+  }),
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: {
     enabled: true,
