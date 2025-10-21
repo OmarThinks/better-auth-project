@@ -11,6 +11,9 @@ const auth = betterAuth({
     enabled: true,
   },
   plugins: [anonymous()],
+  telemetry: {
+    enabled: false,
+  },
 });
 
 export { auth };

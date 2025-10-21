@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma-init": "npx prisma init",
+    "prisma-migrate": "npx prisma migrate dev --name init",
+    "prisma-push": "npx prisma db push",
+    "better-auth-generate": "npx @better-auth/cli generate"
   },
   "dependencies": {
     "@prisma/client": "^6.17.1",

@@ -20,8 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prisma-init": "npx prisma init",
     "prisma-migrate": "npx prisma migrate dev --name init",
-    "better-auth-generate": "npx @better-auth/cli generate",
-    "better-auth-migrate": "npx @better-auth/cli migrate"
+    "prisma-push": "npx prisma db push",
+    "better-auth-generate": "npx @better-auth/cli generate"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",

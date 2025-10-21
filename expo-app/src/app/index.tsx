@@ -19,14 +19,34 @@ export default function Index() {
         <Button
           title="Logout"
           onPress={() => {
-            authClient.signOut();
+            authClient
+              .signOut()
+              .then((a) => {
+                console.log("sign out successful", a);
+              })
+              .catch((err) => {
+                console.log("sign out Error:", err);
+              })
+              .finally(() => {
+                console.log("sign out completed");
+              });
           }}
         />
       ) : (
         <Button
           title="Login"
           onPress={() => {
-            authClient.signIn.anonymous();
+            authClient.signIn
+              .anonymous()
+              .then((a) => {
+                console.log("sign in successful", a);
+              })
+              .catch((err) => {
+                console.log("sign in Error:", err);
+              })
+              .finally(() => {
+                console.log("sign in completed");
+              });
           }}
         />
       )}
