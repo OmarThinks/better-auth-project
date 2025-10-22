@@ -74,3 +74,11 @@ model Verification {
 
   @@map("verification")
 }
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  authorId  Int
+}
