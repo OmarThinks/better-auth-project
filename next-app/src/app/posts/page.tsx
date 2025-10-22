@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 
 export default async function Posts() {
   const posts = await prisma.post.findMany();
-  console.log("posts", posts);
+  //console.log("posts", posts);
 
   const addARecordToDB = async () => {
     await prisma.post.create({
